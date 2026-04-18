@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Tolotech</title>
+  <meta name="description" content="App development, AI automation, IT consulting, and senior-friendly tech support. Bilingual. Florida-based." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="t-nav" id="navbar">
+    <a href="index.html" class="t-logo-wrap"><img src="assets/logo.png" alt="Tolotech" class="t-logo-img" /></a>
+    <div class="t-nav-center">
+      <a href="index.html" class="t-nav-link" id="nav-home">Home</a>
+      <a href="services.html" class="t-nav-link active" id="nav-services">Services</a>
+      <a href="about.html" class="t-nav-link" id="nav-about">About</a>
+      <a href="contact.html" class="t-nav-link" id="nav-contact">Contact</a>
+    </div>
+    <div class="t-nav-right">
+      <a href="contact.html" class="t-nav-cta" id="nav-cta">Get in touch</a>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+      <button class="t-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="t-mobile-menu" id="mobile-menu">
+      <a href="index.html" class="t-mobile-link" id="m-nav-home">Home</a>
+      <a href="services.html" class="t-mobile-link active" id="m-nav-services">Services</a>
+      <a href="about.html" class="t-mobile-link" id="m-nav-about">About</a>
+      <a href="contact.html" class="t-mobile-link" id="m-nav-contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="t-svc-hero">
+    <div class="t-grid-bg"></div>
+    <div class="t-badge"><div class="t-badge-dot"></div>SERVICES</div>
+    <h1 id="svc-hero-h1">Services built for<br><span class="ta">real businesses.</span></h1>
+    <p id="svc-hero-sub">We don't sell hype. We solve problems. Here's exactly how we help small businesses, families, and seniors get the most out of technology.</p>
+  </section>
+
+  <!-- SERVICE 1: Apps -->
+  <section class="t-svc-detail" id="apps">
+    <div>
+      <div class="t-svc-detail-num" id="sd1-num">01 — APP DEVELOPMENT</div>
+      <h2 id="sd1-h2">Custom apps that<br>fit your business.</h2>
+      <p id="sd1-p">Off-the-shelf software forces you to change how you work. We build apps that adapt to you — your workflow, your team, your customers. From an internal tool to a customer-facing platform, we handle the full journey.</p>
+      <a href="contact.html" class="t-btn-primary" style="margin-top:1.5rem">Get a free consultation →</a>
+    </div>
+    <div class="t-svc-features">
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd1f1-h">Web applications</h4><p id="sd1f1-p">Responsive web apps that work on any device, built for speed and simplicity.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd1f2-h">Mobile apps</h4><p id="sd1f2-p">iOS and Android apps your customers will actually enjoy using.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd1f3-h">Integrations</h4><p id="sd1f3-p">Connect your apps to the tools you already use — no more copy-pasting between systems.</p></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICE 2: AI -->
+  <section class="t-svc-detail" id="ai">
+    <div>
+      <div class="t-svc-detail-num" id="sd2-num">02 — AI & AUTOMATION</div>
+      <h2 id="sd2-h2">Stop doing work<br>a machine should do.</h2>
+      <p id="sd2-p">If you or your team are doing the same thing more than twice, we can probably automate it. We use AI and smart workflows to eliminate busywork, reduce errors, and save you hours every week.</p>
+      <a href="contact.html" class="t-btn-primary" style="margin-top:1.5rem">Automate my business →</a>
+    </div>
+    <div class="t-svc-features">
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd2f1-h">Email & messaging automation</h4><p id="sd2f1-p">Auto-responses, follow-ups, and notifications that run on autopilot.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd2f2-h">Data entry & processing</h4><p id="sd2f2-p">Let machines handle the spreadsheets, form entries, and data transfers.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd2f3-h">AI-powered tools</h4><p id="sd2f3-p">Custom AI assistants, content generators, and smart analytics for your business.</p></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICE 3: IT -->
+  <section class="t-svc-detail" id="it">
+    <div>
+      <div class="t-svc-detail-num" id="sd3-num">03 — IT CONSULTING</div>
+      <h2 id="sd3-h2">Tech strategy that<br>actually makes sense.</h2>
+      <p id="sd3-p">You don't need a full IT department. You need someone who understands your business, speaks your language, and gives you straight answers. That's us.</p>
+      <a href="contact.html" class="t-btn-primary" style="margin-top:1.5rem">Talk to an expert →</a>
+    </div>
+    <div class="t-svc-features">
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd3f1-h">Infrastructure planning</h4><p id="sd3f1-p">Set up the right tools, cloud services, and systems from day one.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd3f2-h">Security & compliance</h4><p id="sd3f2-p">Protect your business data without making everyone's life harder.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd3f3-h">Ongoing support</h4><p id="sd3f3-p">When something breaks at 9 PM on a Tuesday, we pick up. No tickets, no waiting.</p></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICE 4: Senior -->
+  <section class="t-svc-detail" id="support">
+    <div>
+      <div class="t-svc-detail-num" id="sd4-num">04 — SENIOR & FAMILY SUPPORT</div>
+      <h2 id="sd4-h2">Tech help your family<br>actually deserves.</h2>
+      <p id="sd4-p">Your parents shouldn't be afraid of their phone. Your grandma should be able to video call her grandkids. We provide patient, bilingual tech support that treats your family with respect — not condescension.</p>
+      <a href="contact.html" class="t-btn-primary" style="margin-top:1.5rem">Get help for my family →</a>
+    </div>
+    <div class="t-svc-features">
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd4f1-h">Device setup & training</h4><p id="sd4f1-p">Phones, tablets, computers — set up right and explained in plain language.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd4f2-h">Scam & fraud protection</h4><p id="sd4f2-p">We teach your loved ones how to spot scams and keep their information safe.</p></div></div>
+      <div class="t-svc-feature"><div class="t-svc-feat-dot"></div><div><h4 id="sd4f3-h">Ongoing help</h4><p id="sd4f3-p">A friendly phone call away. No judgment, no rush — we'll explain it as many times as needed.</p></div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="t-cta-banner">
+    <div class="t-cta-inner">
+      <h2 id="cta-h2">Ready to stop fighting<br>with technology?</h2>
+      <p id="cta-p">Tell us what's going on. We'll listen, figure out the best solution, and give you an honest quote — no pressure, no jargon.</p>
+      <div class="t-cta-actions">
+        <a href="mailto:tolotech2025@gmail.com?subject=Hello%20Tolotech" class="t-btn-primary t-btn-lg"><span id="cta-btn">Email us now →</span></a>
+      </div>
+      <a class="t-cta-email" href="mailto:tolotech2025@gmail.com">tolotech2025@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="t-footer">
+    <div class="t-footer-top">
+      <div class="t-footer-brand"><img src="assets/logo.png" alt="Tolotech" class="t-footer-logo" /><p id="ft-desc">Technology that works for small businesses, families, and seniors. Based in Florida, serving the world.</p></div>
+      <div class="t-footer-links">
+        <div class="t-footer-col"><h4 id="ft-nav-title">Navigation</h4><a href="index.html" id="ft-home">Home</a><a href="services.html" id="ft-services">Services</a><a href="about.html" id="ft-about">About</a><a href="contact.html" id="ft-contact">Contact</a></div>
+        <div class="t-footer-col"><h4 id="ft-svc-title">Services</h4><a href="services.html#apps" id="ft-s1">App Development</a><a href="services.html#ai" id="ft-s2">AI & Automation</a><a href="services.html#it" id="ft-s3">IT Consulting</a><a href="services.html#support" id="ft-s4">Tech Support</a></div>
+        <div class="t-footer-col"><h4 id="ft-contact-title">Contact</h4><a href="mailto:tolotech2025@gmail.com">tolotech2025@gmail.com</a><span id="ft-loc">Florida, USA</span></div>
+      </div>
+    </div>
+    <div class="t-footer-bottom"><span>© 2025 Tolotech LLC. <span id="ft-rights">All rights reserved.</span></span><span class="t-footer-tagline" id="ft-tag">Next Generation Solutions</span></div>
+  </footer>
+
+  <script src="assets/lang.js"></script>
+  <script>
+    window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10); });
+    function toggleMenu() { document.getElementById('mobile-menu').classList.toggle('open'); document.querySelector('.t-hamburger').classList.toggle('open'); }
+  </script>
+</body>
+</html>
