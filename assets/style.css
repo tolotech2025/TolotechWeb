@@ -29,7 +29,10 @@ a { text-decoration: none; color: inherit; }
 /* ── NAVBAR ── */
 .t-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 2.5rem; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: box-shadow 0.3s; }
 .t-nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
-.t-logo-wrap { display: flex; align-items: center; }
+.t-logo-wrap { display: flex; align-items: center; gap: 8px; }
+.t-logo-icon { height: 32px; width: 32px; object-fit: contain; }
+.t-logo-text { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; }
+.t-logo-text span { color: var(--blue); }
 .t-logo-img { height: 38px; width: auto; }
 .t-nav-center { display: flex; align-items: center; gap: 4px; }
 .t-nav-link { font-size: 13px; color: var(--text-secondary); padding: 6px 14px; border-radius: 99px; transition: all 0.15s; font-weight: 400; }
