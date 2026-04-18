@@ -1,0 +1,668 @@
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TOLOTECH â€” Global Stylesheet
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+:root {
+  --navy: #1B2B4B;
+  --navy-light: #2a3f66;
+  --blue: #2E7CF6;
+  --blue-light: #e8f0fe;
+  --blue-border: #a4c2f4;
+  --teal: #00C896;
+  --coral: #FF6B35;
+  --text: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --bg: #ffffff;
+  --bg-alt: #f7f7f5;
+  --bg-dark: #0d1117;
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* â”€â”€ NAVBAR â”€â”€ */
+.t-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 2.5rem;
+  border-bottom: 0.5px solid var(--border);
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s;
+}
+
+.t-nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
+
+.t-logo-wrap { display: flex; align-items: center; }
+.t-logo-img { height: 38px; width: auto; }
+
+.t-nav-center { display: flex; align-items: center; gap: 4px; }
+
+.t-nav-link {
+  font-size: 13px; color: var(--text-secondary);
+  padding: 6px 14px; border-radius: 99px;
+  transition: all 0.15s; font-weight: 400;
+}
+
+.t-nav-link:hover { background: var(--bg-alt); color: var(--text); }
+.t-nav-link.active { color: var(--blue); font-weight: 500; }
+
+.t-nav-right { display: flex; align-items: center; gap: 8px; }
+
+.t-nav-cta {
+  font-size: 12px; font-weight: 500;
+  color: #fff; background: var(--navy);
+  border-radius: 99px; padding: 8px 20px;
+  transition: all 0.2s;
+}
+
+.t-nav-cta:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+.lang-toggle { display: flex; gap: 2px; }
+
+.lang-btn {
+  font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+  padding: 5px 10px; border-radius: 99px;
+  border: 0.5px solid var(--border); background: transparent;
+  color: var(--text-muted); cursor: pointer; transition: all 0.15s;
+}
+
+.lang-btn.active {
+  background: var(--blue-light); color: var(--blue); border-color: var(--blue-border);
+}
+
+/* Hamburger */
+.t-hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 28px; height: 20px; position: relative; flex-direction: column;
+  justify-content: space-between;
+}
+
+.t-hamburger span {
+  display: block; height: 2px; width: 100%;
+  background: var(--text); border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.t-hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.t-hamburger.open span:nth-child(2) { opacity: 0; }
+.t-hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+.t-mobile-menu {
+  display: none; position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--bg); border-bottom: 0.5px solid var(--border);
+  flex-direction: column; padding: 1rem 2rem;
+}
+
+.t-mobile-menu.open { display: flex; }
+
+.t-mobile-link {
+  font-size: 15px; padding: 12px 0; color: var(--text-secondary);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.t-mobile-link:last-child { border-bottom: none; }
+.t-mobile-link.active { color: var(--blue); font-weight: 500; }
+
+/* â”€â”€ HERO â”€â”€ */
+.t-hero {
+  position: relative;
+  padding: 5rem 2.5rem 4.5rem;
+  border-bottom: 0.5px solid var(--border);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 3rem; min-height: 520px;
+}
+
+.t-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px; opacity: 0.4; pointer-events: none;
+}
+
+.t-hero-content { position: relative; flex: 1; max-width: 640px; }
+
+.t-hero-visual {
+  position: relative; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.t-hero-logo {
+  width: 280px; height: 280px; object-fit: contain;
+  filter: drop-shadow(0 8px 40px rgba(27,43,75,0.12));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.t-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Space Mono', monospace; font-size: 11px;
+  color: var(--blue); background: var(--blue-light);
+  border: 0.5px solid var(--blue-border); border-radius: 99px;
+  padding: 5px 14px; margin-bottom: 1.5rem;
+}
+
+.t-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal); animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.t-hero h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 700; line-height: 1.1;
+  margin: 0 0 1.5rem; letter-spacing: -1.5px;
+  color: var(--navy);
+}
+
+.ta { color: var(--blue); }
+
+.t-hero-sub {
+  font-size: 16px; line-height: 1.75; color: var(--text-secondary);
+  max-width: 500px; margin: 0 0 2rem; font-weight: 300;
+}
+
+.t-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.t-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+  color: #fff; background: var(--navy);
+  border: none; border-radius: 99px;
+  padding: 13px 28px; cursor: pointer;
+  transition: all 0.2s; text-decoration: none;
+}
+
+.t-btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+.t-btn-lg { padding: 15px 36px; font-size: 15px; }
+
+.t-btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+  color: var(--text-secondary); background: transparent;
+  border: 0.5px solid var(--border); border-radius: 99px;
+  padding: 13px 28px; cursor: pointer;
+  transition: all 0.2s; text-decoration: none;
+}
+
+.t-btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+/* â”€â”€ TRUST BAR â”€â”€ */
+.t-trust {
+  padding: 1.25rem 2.5rem;
+  display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--navy); color: rgba(255,255,255,0.7);
+}
+
+.t-trust-item {
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;
+}
+
+.t-trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
+
+/* â”€â”€ SECTION SHARED â”€â”€ */
+.t-section-label {
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700;
+  color: var(--blue); letter-spacing: 1.5px; margin-bottom: 0.75rem;
+}
+
+.t-section-h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700; letter-spacing: -0.5px; margin-bottom: 2.5rem;
+  color: var(--navy); max-width: 500px;
+}
+
+/* â”€â”€ PROBLEMS â”€â”€ */
+.t-problems {
+  padding: 4rem 2.5rem; border-bottom: 0.5px solid var(--border);
+}
+
+.t-problem-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px; background: var(--border); border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+
+.t-problem-card {
+  padding: 2.25rem; background: var(--bg);
+  transition: background 0.2s;
+}
+
+.t-problem-card:hover { background: var(--bg-alt); }
+
+.t-problem-num {
+  font-family: 'Space Mono', monospace; font-size: 32px; font-weight: 700;
+  color: var(--navy); opacity: 0.12; margin-bottom: 0.75rem;
+}
+
+.t-problem-card h3 {
+  font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; color: var(--navy);
+}
+
+.t-problem-card p {
+  font-size: 13px; color: var(--text-secondary); line-height: 1.65; font-weight: 300;
+}
+
+/* â”€â”€ SERVICES PREVIEW â”€â”€ */
+.t-services-preview {
+  padding: 4rem 2.5rem; border-bottom: 0.5px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.t-svc-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.t-svc-card {
+  background: var(--bg); border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2rem 1.5rem;
+  transition: all 0.25s; position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+.t-svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(27,43,75,0.08);
+  border-color: var(--blue-border);
+}
+
+.t-svc-icon {
+  font-size: 22px; width: 44px; height: 44px;
+  background: var(--blue-light); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem; color: var(--blue); font-weight: 700;
+}
+
+.t-svc-num {
+  font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+  color: var(--text-muted); letter-spacing: 1px; margin-bottom: 0.75rem;
+}
+
+.t-svc-card h3 {
+  font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; color: var(--navy);
+}
+
+.t-svc-card p {
+  font-size: 13px; color: var(--text-secondary); line-height: 1.65;
+  font-weight: 300; flex: 1;
+}
+
+.t-svc-arrow {
+  font-size: 12px; font-weight: 500; color: var(--blue); margin-top: 1.25rem;
+  display: inline-block;
+}
+
+/* â”€â”€ WHY TOLOTECH â”€â”€ */
+.t-why {
+  padding: 4rem 2.5rem; border-bottom: 0.5px solid var(--border);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+}
+
+.t-why-left p {
+  font-size: 14px; line-height: 1.8; color: var(--text-secondary); font-weight: 300;
+}
+
+.t-why-right { display: flex; flex-direction: column; gap: 20px; }
+
+.t-why-item {
+  display: flex; gap: 14px; align-items: flex-start;
+}
+
+.t-why-check {
+  width: 28px; height: 28px; min-width: 28px;
+  background: var(--teal); color: #fff;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; margin-top: 2px;
+}
+
+.t-why-item h4 {
+  font-size: 14px; font-weight: 500; margin-bottom: 2px; color: var(--navy);
+}
+
+.t-why-item p {
+  font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 300;
+}
+
+/* â”€â”€ CTA BANNER â”€â”€ */
+.t-cta-banner {
+  padding: 5rem 2.5rem;
+  background: var(--navy); color: #fff;
+  text-align: center;
+}
+
+.t-cta-inner { max-width: 520px; margin: 0 auto; }
+
+.t-cta-banner h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700; letter-spacing: -0.5px; margin-bottom: 1rem;
+  color: #fff;
+}
+
+.t-cta-banner p {
+  font-size: 15px; color: rgba(255,255,255,0.65);
+  margin: 0 auto 2rem; line-height: 1.75; font-weight: 300;
+}
+
+.t-cta-actions { margin-bottom: 1rem; }
+
+.t-cta-banner .t-btn-primary {
+  background: var(--blue); color: #fff;
+}
+
+.t-cta-banner .t-btn-primary:hover { background: #1a6ae0; }
+
+.t-cta-email {
+  font-family: 'Space Mono', monospace; font-size: 13px;
+  color: rgba(255,255,255,0.5); display: block; margin-top: 0.75rem;
+  transition: color 0.15s;
+}
+
+.t-cta-email:hover { color: var(--teal); }
+
+/* â”€â”€ FOOTER â”€â”€ */
+.t-footer {
+  background: var(--bg-dark); color: rgba(255,255,255,0.6);
+  padding: 3rem 2.5rem 2rem;
+}
+
+.t-footer-top {
+  display: flex; justify-content: space-between; gap: 3rem;
+  padding-bottom: 2.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.t-footer-brand { max-width: 280px; }
+
+.t-footer-logo {
+  height: 40px; width: auto; margin-bottom: 1rem;
+  filter: brightness(0) invert(1) opacity(0.7);
+}
+
+.t-footer-brand p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.4); }
+
+.t-footer-links { display: flex; gap: 3rem; }
+
+.t-footer-col {
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.t-footer-col h4 {
+  font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.8);
+  margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.t-footer-col a, .t-footer-col span {
+  font-size: 13px; color: rgba(255,255,255,0.4);
+  transition: color 0.15s;
+}
+
+.t-footer-col a:hover { color: var(--teal); }
+
+.t-footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: rgba(255,255,255,0.25);
+}
+
+.t-footer-tagline {
+  font-family: 'Space Mono', monospace; font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* â”€â”€ ABOUT PAGE â”€â”€ */
+.t-about-hero {
+  position: relative; padding: 4rem 2.5rem 3.5rem;
+  border-bottom: 0.5px solid var(--border); overflow: hidden;
+}
+
+.t-about-hero h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px;
+  margin-bottom: 1rem; color: var(--navy);
+}
+
+.t-about-hero p {
+  font-size: 16px; line-height: 1.75; color: var(--text-secondary);
+  max-width: 560px; font-weight: 300;
+}
+
+.t-pillars {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 0.5px solid var(--border);
+}
+
+.t-pillar {
+  padding: 2.5rem 2rem; border-right: 0.5px solid var(--border);
+  transition: background 0.2s;
+}
+
+.t-pillar:last-child { border-right: none; }
+.t-pillar:hover { background: var(--bg-alt); }
+
+.t-pillar-icon {
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700;
+  color: var(--blue); margin-bottom: 0.75rem; letter-spacing: 1px;
+}
+
+.t-pillar h3 { font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; color: var(--navy); }
+.t-pillar p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+
+.t-story {
+  padding: 3.5rem 2.5rem; border-bottom: 0.5px solid var(--border);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+
+.t-story h2 {
+  font-family: 'Space Mono', monospace; font-size: 1.3rem;
+  font-weight: 700; letter-spacing: -0.5px; margin-bottom: 1rem; color: var(--navy);
+}
+
+.t-story p { font-size: 14px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1rem; font-weight: 300; }
+.t-story p:last-child { margin-bottom: 0; }
+
+.t-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.t-stat {
+  background: var(--bg-alt); border-radius: var(--radius); padding: 1.5rem;
+}
+
+.t-stat-num {
+  font-family: 'Space Mono', monospace; font-size: 2rem;
+  font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px;
+}
+
+.t-stat-label { font-size: 12px; color: var(--text-muted); }
+
+/* â”€â”€ SERVICES PAGE â”€â”€ */
+.t-svc-hero {
+  position: relative; padding: 4rem 2.5rem 3.5rem;
+  border-bottom: 0.5px solid var(--border); overflow: hidden;
+}
+
+.t-svc-hero h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px;
+  margin-bottom: 1rem; color: var(--navy);
+}
+
+.t-svc-hero p {
+  font-size: 16px; line-height: 1.75; color: var(--text-secondary);
+  max-width: 560px; font-weight: 300;
+}
+
+.t-svc-detail {
+  padding: 4rem 2.5rem; border-bottom: 0.5px solid var(--border);
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;
+}
+
+.t-svc-detail:nth-child(even) { background: var(--bg-alt); }
+
+.t-svc-detail-num {
+  font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700;
+  color: var(--blue); letter-spacing: 1.5px; margin-bottom: 0.75rem;
+}
+
+.t-svc-detail h2 {
+  font-family: 'Space Mono', monospace; font-size: 1.3rem;
+  font-weight: 700; letter-spacing: -0.5px; margin-bottom: 1rem; color: var(--navy);
+}
+
+.t-svc-detail p {
+  font-size: 14px; line-height: 1.8; color: var(--text-secondary);
+  margin-bottom: 1rem; font-weight: 300;
+}
+
+.t-svc-features { display: flex; flex-direction: column; gap: 14px; }
+
+.t-svc-feature {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 1.25rem; background: var(--bg); border: 0.5px solid var(--border);
+  border-radius: var(--radius); transition: all 0.2s;
+}
+
+.t-svc-feature:hover { border-color: var(--blue-border); }
+
+.t-svc-feat-dot {
+  width: 8px; height: 8px; min-width: 8px;
+  border-radius: 50%; background: var(--teal); margin-top: 5px;
+}
+
+.t-svc-feature h4 { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.t-svc-feature p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; font-weight: 300; margin: 0; }
+
+/* â”€â”€ CONTACT PAGE â”€â”€ */
+.t-contact-hero {
+  position: relative; padding: 4rem 2.5rem 3.5rem;
+  border-bottom: 0.5px solid var(--border); overflow: hidden;
+}
+
+.t-contact-hero h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -1px;
+  margin-bottom: 1rem; color: var(--navy);
+}
+
+.t-contact-hero p {
+  font-size: 16px; line-height: 1.75; color: var(--text-secondary);
+  max-width: 560px; font-weight: 300;
+}
+
+.t-contact-body {
+  padding: 3.5rem 2.5rem; border-bottom: 0.5px solid var(--border);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+}
+
+.t-contact-info { display: flex; flex-direction: column; gap: 24px; }
+
+.t-contact-block h3 {
+  font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700;
+  color: var(--navy); letter-spacing: 0.5px; margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.t-contact-block p, .t-contact-block a {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+}
+
+.t-contact-block a { color: var(--blue); }
+.t-contact-block a:hover { text-decoration: underline; }
+
+.t-form { display: flex; flex-direction: column; gap: 14px; }
+
+.t-form input,
+.t-form select,
+.t-form textarea {
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  width: 100%; background: var(--bg-alt);
+  border: 0.5px solid var(--border); border-radius: var(--radius);
+  padding: 12px 16px; color: var(--text);
+  outline: none; transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+
+.t-form input:focus,
+.t-form select:focus,
+.t-form textarea:focus { border-color: var(--blue); }
+
+.t-form textarea { height: 120px; resize: none; }
+
+.t-form-success {
+  display: none;
+  font-family: 'Space Mono', monospace; font-size: 12px;
+  color: #0a6640; background: #d4edda; border: 0.5px solid #a3d9b6;
+  border-radius: var(--radius); padding: 12px 16px;
+}
+
+/* â”€â”€ RESPONSIVE â”€â”€ */
+@media (max-width: 768px) {
+  .t-nav { padding: 0.75rem 1.25rem; }
+  .t-nav-center { display: none; }
+  .t-nav-cta { display: none; }
+  .t-hamburger { display: flex; }
+
+  .t-hero {
+    flex-direction: column; padding: 3rem 1.25rem 2.5rem;
+    text-align: center; min-height: auto;
+  }
+  .t-hero-content { max-width: 100%; }
+  .t-hero-sub { margin-left: auto; margin-right: auto; }
+  .t-hero-actions { justify-content: center; }
+  .t-hero-visual { order: -1; }
+  .t-hero-logo { width: 160px; height: 160px; }
+
+  .t-trust { gap: 1rem; padding: 1rem 1.25rem; }
+  .t-problems { padding: 2.5rem 1.25rem; }
+  .t-problem-grid { grid-template-columns: 1fr; }
+
+  .t-services-preview { padding: 2.5rem 1.25rem; }
+  .t-svc-grid { grid-template-columns: 1fr; }
+
+  .t-why { grid-template-columns: 1fr; padding: 2.5rem 1.25rem; gap: 2rem; }
+
+  .t-cta-banner { padding: 3rem 1.25rem; }
+
+  .t-footer { padding: 2rem 1.25rem 1.5rem; }
+  .t-footer-top { flex-direction: column; gap: 2rem; }
+  .t-footer-links { flex-direction: column; gap: 1.5rem; }
+  .t-footer-bottom { flex-direction: column; gap: 8px; align-items: flex-start; }
+
+  .t-pillars { grid-template-columns: 1fr; }
+  .t-pillar { border-right: none; border-bottom: 0.5px solid var(--border); }
+  .t-story { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.25rem; }
+  .t-about-hero, .t-svc-hero, .t-contact-hero { padding: 2.5rem 1.25rem; }
+
+  .t-svc-detail { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
+
+  .t-contact-body { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
+}
