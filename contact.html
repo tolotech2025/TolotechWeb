@@ -6,8 +6,7 @@
 <meta name="description" content="Get in touch with Tolotech. Email, call, or WhatsApp us for app development, AI automation, IT consulting, or senior tech support.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -24,13 +23,52 @@
 <div class="t-contact-block"><h3 id="c-info-lang">Languages</h3><p id="c-info-lang-val">English · Spanish</p></div>
 <div class="t-contact-block"><h3 id="c-info-hours">Response time</h3><p id="c-info-hours-val">Within 24 hours</p></div>
 </div>
-<div class="t-form">
-<input type="text" id="form-name" placeholder="Your name">
-<input type="email" id="form-email" placeholder="Your email">
-<select id="form-service"><option value="" disabled selected>What do you need help with?</option><option value="apps">App Development</option><option value="ai">AI & Automation</option><option value="it">IT Consulting</option><option value="senior">Senior / Family Tech Support</option><option value="other">Other / Not sure</option></select>
-<textarea id="form-msg" placeholder="Tell us about your project or problem..."></textarea>
-<div class="t-form-success" id="form-success">Message sent — we'll be in touch soon.</div>
-<button class="t-btn-primary t-btn-lg" onclick="sendForm()" style="align-self:flex-start"><span id="form-btn">Send message →</span></button>
+<div class="t-smart-form">
+  <div class="t-form-row">
+    <input type="text" id="form-name" class="t-input" placeholder="Your name">
+    <input type="email" id="form-email" class="t-input" placeholder="Your email">
+  </div>
+  <div class="t-form-label" id="form-type-label">What can we help you with?</div>
+  <div class="t-type-cards">
+    <button type="button" class="t-type-card" id="card-business" onclick="selectType('business')">
+      <div class="t-type-icon">🏢</div>
+      <div class="t-type-title" id="card-business-title">Business Services</div>
+      <div class="t-type-sub" id="card-business-sub">App dev, AI automation &amp; IT consulting</div>
+    </button>
+    <button type="button" class="t-type-card" id="card-support" onclick="selectType('support')">
+      <div class="t-type-icon">🛟</div>
+      <div class="t-type-title" id="card-support-title">IT Support</div>
+      <div class="t-type-sub" id="card-support-sub">Help for individuals, families &amp; seniors</div>
+    </button>
+  </div>
+  <div class="t-sub-section" id="business-section" style="display:none">
+    <div class="t-form-label" id="business-label">Which service do you need?</div>
+    <div class="t-pill-group">
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="App Development" data-es="Desarrollo de Apps">📱 App Development</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="AI &amp; Automation" data-es="IA y Automatización">⚡ AI &amp; Automation</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="IT Consulting" data-es="Consultoría IT">💼 IT Consulting</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="Other / Not sure" data-es="Otro / No estoy seguro">❓ Not sure yet</button>
+    </div>
+  </div>
+  <div class="t-sub-section" id="support-section" style="display:none">
+    <div class="t-form-label" id="support-label">What's going on? (select all that apply)</div>
+    <div class="t-check-grid">
+      <label class="t-check-item"><input type="checkbox" value="Phone / Tablet help" data-es="Ayuda con teléfono / tablet"><span>📱 Phone / Tablet help</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Computer running slow" data-es="Computadora lenta"><span>💻 Computer running slow</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Internet / WiFi issues" data-es="Problemas de internet / WiFi"><span>🌐 Internet / WiFi issues</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Email problems" data-es="Problemas de correo"><span>📧 Email problems</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Virus / Scam / Security concern" data-es="Virus / Estafa / Seguridad"><span>🔒 Virus / Scam / Security</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Can't video call (Zoom / FaceTime)" data-es="No puedo hacer videollamada"><span>📷 Video call issues</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Printer issues" data-es="Problemas de impresora"><span>🖨️ Printer issues</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Other issue" data-es="Otro problema"><span>❓ Something else</span></label>
+    </div>
+  </div>
+  <div class="t-sub-section" id="msg-section" style="display:none">
+    <textarea id="form-msg" class="t-input" rows="4" placeholder="Tell us more about your situation..."></textarea>
+  </div>
+  <input type="hidden" id="form-service" value="">
+  <div class="t-form-success" id="form-success">Message sent — we'll be in touch soon.</div>
+  <button class="t-btn-primary t-btn-lg" onclick="sendForm()" id="form-submit-btn" style="align-self:flex-start;display:none"><span id="form-btn">Send message →</span></button>
 </div>
 </section>
 
@@ -42,28 +80,98 @@
 <script src="assets/lang.js"></script>
 <script>
 const SUPABASE_URL = 'https://mcddvwsysprgyscafyzy.supabase.co';
+
+// ── Smart Form Logic ──
+var selectedType = '';
+var selectedBiz = '';
+
+function selectType(type) {
+  selectedType = type;
+  // Update card styles
+  document.getElementById('card-business').classList.toggle('active', type === 'business');
+  document.getElementById('card-support').classList.toggle('active', type === 'support');
+  // Show/hide sections
+  document.getElementById('business-section').style.display = type === 'business' ? 'block' : 'none';
+  document.getElementById('support-section').style.display = type === 'support' ? 'block' : 'none';
+  document.getElementById('msg-section').style.display = 'block';
+  document.getElementById('form-submit-btn').style.display = 'inline-flex';
+  // Reset biz selection
+  if (type === 'business') {
+    selectedBiz = '';
+    document.querySelectorAll('.t-pill').forEach(p => p.classList.remove('active'));
+    document.getElementById('form-service').value = 'Business Services';
+  } else {
+    document.getElementById('form-service').value = 'IT Support';
+    // Update placeholder
+    var isES = currentLang === 'es';
+    document.getElementById('form-msg').placeholder = isES
+      ? 'Cuéntanos más sobre lo que está pasando...'
+      : 'Tell us more about what's happening...';
+  }
+}
+
+function selectBiz(btn) {
+  document.querySelectorAll('.t-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  selectedBiz = btn.getAttribute('data-val');
+  document.getElementById('form-service').value = selectedBiz;
+  var isES = currentLang === 'es';
+  var prefill = isES
+    ? 'Hola, me interesa ' + btn.getAttribute('data-es') + '. '
+    : 'Hi, I'm interested in ' + selectedBiz + '. ';
+  document.getElementById('form-msg').placeholder = prefill + (isES ? 'Cuéntanos más...' : 'Tell us more...');
+}
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1jZGR2d3N5c3ByZ3lzY2FmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NjMyOTMsImV4cCI6MjA5MjEzOTI5M30.zcAMRHbcFSdcLx7iFnh0GxPP_-YjGqFffjRjc35pW1g';
 
 async function sendForm() {
   const name = document.getElementById('form-name').value.trim();
   const email = document.getElementById('form-email').value.trim();
-  const service = document.getElementById('form-service').value;
   const msg = document.getElementById('form-msg').value.trim();
   const btn = document.getElementById('form-btn');
   const success = document.getElementById('form-success');
+  const isES = currentLang === 'es';
 
-  if (!name || !email || !msg) {
-    alert(currentLang === 'es' ? 'Por favor completa todos los campos.' : 'Please fill in all required fields.');
+  if (!name || !email) {
+    alert(isES ? 'Por favor ingresa tu nombre y correo.' : 'Please enter your name and email.');
+    return;
+  }
+  if (!selectedType) {
+    alert(isES ? 'Por favor selecciona un tipo de servicio.' : 'Please select a service type.');
     return;
   }
 
-  // Disable button while submitting
-  btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
-  btn.parentElement.disabled = true;
-  btn.parentElement.style.opacity = '0.7';
+  // Build service description
+  let serviceDesc = document.getElementById('form-service').value;
+  if (selectedType === 'support') {
+    const checked = Array.from(document.querySelectorAll('.t-check-grid input:checked'));
+    if (checked.length > 0) {
+      const issues = checked.map(c => isES ? c.getAttribute('data-es') : c.value).join(', ');
+      serviceDesc = 'IT Support: ' + issues;
+    }
+  }
+
+  // Build full message
+  let fullMsg = msg;
+  if (selectedType === 'support') {
+    const checked = Array.from(document.querySelectorAll('.t-check-grid input:checked'));
+    if (checked.length > 0) {
+      const issues = checked.map(c => c.value).join(', ');
+      fullMsg = (isES ? 'Problemas seleccionados: ' : 'Selected issues: ') + issues + (msg ? '
+
+' + msg : '');
+    }
+  }
+
+  if (!fullMsg) {
+    alert(isES ? 'Por favor cuéntanos sobre tu situación.' : 'Please tell us about your situation.');
+    return;
+  }
+
+  btn.textContent = isES ? 'Enviando...' : 'Sending...';
+  document.getElementById('form-submit-btn').disabled = true;
+  document.getElementById('form-submit-btn').style.opacity = '0.7';
 
   try {
-    // 1. Save to Supabase
     const dbRes = await fetch(`${SUPABASE_URL}/rest/v1/inquiries`, {
       method: 'POST',
       headers: {
@@ -72,37 +180,36 @@ async function sendForm() {
         'Authorization': `Bearer ${SUPABASE_ANON}`,
         'Prefer': 'return=minimal'
       },
-      body: JSON.stringify({ name, email, service: service || null, message: msg, lang: currentLang })
+      body: JSON.stringify({ name, email, service: serviceDesc, message: fullMsg, lang: currentLang })
     });
-
     if (!dbRes.ok) throw new Error('DB error');
 
-    // 2. Trigger Edge Function for notifications
     await fetch(`${SUPABASE_URL}/functions/v1/notify-contact`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${SUPABASE_ANON}`
-      },
-      body: JSON.stringify({ name, email, service: service || 'Not specified', message: msg, lang: currentLang })
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${SUPABASE_ANON}` },
+      body: JSON.stringify({ name, email, service: serviceDesc, message: fullMsg, lang: currentLang })
     });
 
-    // 3. Show success
     success.style.display = 'block';
     document.getElementById('form-name').value = '';
     document.getElementById('form-email').value = '';
-    document.getElementById('form-service').selectedIndex = 0;
     document.getElementById('form-msg').value = '';
+    document.querySelectorAll('.t-check-grid input').forEach(c => c.checked = false);
+    document.querySelectorAll('.t-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.t-type-card').forEach(c => c.classList.remove('active'));
+    document.getElementById('business-section').style.display = 'none';
+    document.getElementById('support-section').style.display = 'none';
+    document.getElementById('msg-section').style.display = 'none';
+    document.getElementById('form-submit-btn').style.display = 'none';
+    selectedType = ''; selectedBiz = '';
 
   } catch (err) {
     console.error(err);
-    alert(currentLang === 'es'
-      ? 'Hubo un error. Por favor escríbenos directamente a tolotech2025@gmail.com'
-      : 'Something went wrong. Please email us directly at tolotech2025@gmail.com');
+    alert(isES ? 'Hubo un error. Escríbenos a tolotech2025@gmail.com' : 'Something went wrong. Email us at tolotech2025@gmail.com');
   } finally {
-    btn.textContent = currentLang === 'es' ? 'Enviar mensaje →' : 'Send message →';
-    btn.parentElement.disabled = false;
-    btn.parentElement.style.opacity = '1';
+    btn.textContent = isES ? 'Enviar mensaje →' : 'Send message →';
+    document.getElementById('form-submit-btn').disabled = false;
+    document.getElementById('form-submit-btn').style.opacity = '1';
   }
 }
 </script>
