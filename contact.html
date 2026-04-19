@@ -49,18 +49,18 @@
   <div class="t-form-label" id="form-type-label">What can we help you with?</div>
   <div class="t-type-cards">
     <button type="button" class="t-type-card" id="card-business" onclick="selectType('business')">
-      <div class="t-type-icon-wrap biz-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      <div class="t-type-icon-wrap biz-icon">🏢</div>
+      <div>
+        <div class="t-type-title" id="card-business-title">Business Services</div>
+        <div class="t-type-sub" id="card-business-sub">App dev, AI automation &amp; IT consulting</div>
       </div>
-      <div class="t-type-title" id="card-business-title">Business Services</div>
-      <div class="t-type-sub" id="card-business-sub">App dev, AI automation &amp; IT consulting</div>
     </button>
     <button type="button" class="t-type-card" id="card-support" onclick="selectType('support')">
-      <div class="t-type-icon-wrap sup-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      <div class="t-type-icon-wrap sup-icon">🛟</div>
+      <div>
+        <div class="t-type-title" id="card-support-title">IT Support</div>
+        <div class="t-type-sub" id="card-support-sub">Help for individuals, families &amp; seniors</div>
       </div>
-      <div class="t-type-title" id="card-support-title">IT Support</div>
-      <div class="t-type-sub" id="card-support-sub">Help for individuals, families &amp; seniors</div>
     </button>
   </div>
 
@@ -68,10 +68,10 @@
   <div class="t-sub-section" id="business-section" style="display:none">
     <div class="t-form-label" id="business-label">Which service do you need?</div>
     <div class="t-pill-group">
-      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="App Development" data-es="Desarrollo de Apps">App Development</button>
-      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="AI &amp; Automation" data-es="IA y Automatización">AI &amp; Automation</button>
-      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="IT Consulting" data-es="Consultoría IT">IT Consulting</button>
-      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="Other / Not sure" data-es="Otro / No estoy seguro">Not sure yet</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="App Development" data-es="Desarrollo de Apps">📱 App Development</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="AI &amp; Automation" data-es="IA y Automatización">⚡ AI &amp; Automation</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="IT Consulting" data-es="Consultoría IT">💼 IT Consulting</button>
+      <button type="button" class="t-pill" onclick="selectBiz(this)" data-val="Other / Not sure" data-es="Otro / No estoy seguro">💬 Not sure yet</button>
     </div>
   </div>
 
@@ -79,14 +79,14 @@
   <div class="t-sub-section" id="support-section" style="display:none">
     <div class="t-form-label" id="support-label">What's going on? Select all that apply</div>
     <div class="t-check-grid">
-      <label class="t-check-item"><input type="checkbox" value="Phone / Tablet help" data-es="Ayuda con teléfono / tablet"><span>Phone / Tablet help</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Computer running slow" data-es="Computadora lenta"><span>Computer running slow</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Internet / WiFi issues" data-es="Problemas de internet / WiFi"><span>Internet / WiFi issues</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Email problems" data-es="Problemas de correo"><span>Email problems</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Virus / Scam / Security" data-es="Virus / Estafa / Seguridad"><span>Virus / Scam / Security</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Video call issues" data-es="Problemas de videollamada"><span>Video call issues</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Printer issues" data-es="Problemas de impresora"><span>Printer issues</span></label>
-      <label class="t-check-item"><input type="checkbox" value="Other issue" data-es="Otro problema"><span>Something else</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Phone / Tablet help" data-es="Ayuda con teléfono / tablet"><span>📱 Phone / Tablet help</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Computer running slow" data-es="Computadora lenta"><span>💻 Computer running slow</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Internet / WiFi issues" data-es="Problemas de internet / WiFi"><span>🌐 Internet / WiFi issues</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Email problems" data-es="Problemas de correo"><span>📧 Email problems</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Virus / Scam / Security" data-es="Virus / Estafa / Seguridad"><span>🔒 Virus / Scam / Security</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Video call issues" data-es="Problemas de videollamada"><span>📷 Video call issues</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Printer issues" data-es="Problemas de impresora"><span>🖨️ Printer issues</span></label>
+      <label class="t-check-item"><input type="checkbox" value="Other issue" data-es="Otro problema"><span>💬 Something else</span></label>
     </div>
   </div>
 
