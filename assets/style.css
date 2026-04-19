@@ -1124,3 +1124,28 @@ img { display: block; }
   .t-stat { padding: 1.25rem; }
   .t-stat-num { font-size: 2rem; }
 }
+.t-smart-form { display: flex; flex-direction: column; gap: 20px; }
+.t-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.t-input { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; width: 100%; background: var(--bg-alt); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 13px 16px; color: var(--text); outline: none; transition: border-color 0.2s, box-shadow 0.2s; resize: none; -webkit-appearance: none; }
+.t-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(46,124,246,0.1); }
+.t-form-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.3px; text-transform: uppercase; }
+.t-type-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.t-type-card { background: var(--bg); border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.t-type-card:hover { border-color: var(--blue-border); background: var(--blue-light); transform: translateY(-2px); }
+.t-type-card.active { border-color: var(--blue); background: var(--blue-light); box-shadow: 0 4px 20px rgba(46,124,246,0.15); }
+.t-type-icon { font-size: 32px; line-height: 1; }
+.t-type-title { font-size: 15px; font-weight: 700; color: var(--navy); }
+.t-type-sub { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+.t-type-card.active .t-type-title { color: var(--blue); }
+.t-sub-section { animation: fadeSlide 0.25s ease; }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.t-pill-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.t-pill { background: var(--bg); border: 1.5px solid var(--border); border-radius: 99px; padding: 8px 18px; font-size: 14px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; font-family: 'Plus Jakarta Sans', sans-serif; }
+.t-pill:hover { border-color: var(--blue-border); color: var(--blue); background: var(--blue-light); }
+.t-pill.active { border-color: var(--blue); color: var(--blue); background: var(--blue-light); font-weight: 600; }
+.t-check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.t-check-item { display: flex; align-items: center; gap: 10px; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; cursor: pointer; transition: all 0.2s; font-size: 14px; color: var(--text-secondary); }
+.t-check-item:hover { border-color: var(--blue-border); background: var(--blue-light); }
+.t-check-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--blue); cursor: pointer; flex-shrink: 0; }
+.t-check-item:has(input:checked) { border-color: var(--blue); background: var(--blue-light); color: var(--navy); font-weight: 500; }
+@media (max-width: 768px) { .t-form-row { grid-template-columns: 1fr; } .t-type-cards { grid-template-columns: 1fr; } .t-check-grid { grid-template-columns: 1fr; } }
