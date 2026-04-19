@@ -259,7 +259,7 @@ function sendForm() {
     (isES ? 'Correo' : 'Email') + ': ' + e + '\n' +
     (isES ? 'Servicio' : 'Service') + ': ' + (svc || 'N/A') + '\n\n' + m
   );
-  window.location.href = 'mailto:tolotech2025@gmail.com?subject=' + subject + '&body=' + body;
+  window.location.href = 'mailto:hello@tolotech.net?subject=' + subject + '&body=' + body;
 
   var success = document.getElementById('form-success');
   if (success) success.style.display = 'block';
