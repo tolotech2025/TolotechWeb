@@ -27,23 +27,23 @@ body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans
 a { text-decoration: none; color: inherit; }
 
 /* ── NAVBAR ── */
-.t-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 2.5rem; border-bottom: 0.5px solid var(--border); position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: box-shadow 0.3s; }
-.t-nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
-.t-logo-wrap { display: flex; align-items: center; gap: 8px; }
-.t-logo-icon { height: 32px; width: 32px; object-fit: contain; }
-.t-logo-text { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; }
+.t-nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 3rem; border-bottom: 1px solid rgba(27,43,75,0.08); position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); transition: box-shadow 0.3s; }
+.t-nav.scrolled { box-shadow: 0 2px 30px rgba(27,43,75,0.08); }
+.t-logo-wrap { display: flex; align-items: center; gap: 10px; }
+.t-logo-icon { height: 36px; width: 36px; object-fit: contain; }
+.t-logo-text { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; }
 .t-logo-text span { color: var(--blue); }
-.t-logo-img { height: 38px; width: auto; }
-.t-nav-center { display: flex; align-items: center; gap: 4px; }
-.t-nav-link { font-size: 13px; color: var(--text-secondary); padding: 6px 14px; border-radius: 99px; transition: all 0.15s; font-weight: 400; }
-.t-nav-link:hover { background: var(--bg-alt); color: var(--text); }
-.t-nav-link.active { color: var(--blue); font-weight: 500; }
-.t-nav-right { display: flex; align-items: center; gap: 8px; }
-.t-nav-cta { font-size: 12px; font-weight: 500; color: #fff; background: var(--navy); border-radius: 99px; padding: 8px 20px; transition: all 0.2s; }
-.t-nav-cta:hover { background: var(--navy-light); transform: translateY(-1px); }
-.lang-toggle { display: flex; gap: 2px; }
-.lang-btn { font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 700; padding: 5px 10px; border-radius: 99px; border: 0.5px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
-.lang-btn.active { background: var(--blue-light); color: var(--blue); border-color: var(--blue-border); }
+.t-logo-img { height: 42px; width: auto; }
+.t-nav-center { display: flex; align-items: center; gap: 2px; }
+.t-nav-link { font-size: 15px; color: var(--text-secondary); padding: 8px 18px; border-radius: 99px; transition: all 0.2s; font-weight: 400; letter-spacing: -0.1px; }
+.t-nav-link:hover { background: var(--bg-alt); color: var(--navy); }
+.t-nav-link.active { color: var(--blue); font-weight: 600; background: var(--blue-light); }
+.t-nav-right { display: flex; align-items: center; gap: 10px; }
+.t-nav-cta { font-size: 14px; font-weight: 600; color: #fff; background: var(--navy); border-radius: 99px; padding: 10px 24px; transition: all 0.2s; letter-spacing: -0.1px; }
+.t-nav-cta:hover { background: var(--blue); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(46,124,246,0.3); }
+.lang-toggle { display: flex; gap: 3px; background: var(--bg-alt); border-radius: 99px; padding: 3px; }
+.lang-btn { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 99px; border: none; background: transparent; color: var(--text-muted); cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; }
+.lang-btn.active { background: #fff; color: var(--blue); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
 
 /* Hamburger */
 .t-hamburger { display: none; background: none; border: none; cursor: pointer; width: 28px; height: 20px; position: relative; flex-direction: column; justify-content: space-between; }
