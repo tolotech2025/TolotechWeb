@@ -160,6 +160,70 @@ var MAP = [
   ['sd4f3-h','Ongoing help','Ayuda continua'],
   ['sd4f3-p',"A friendly phone call away. No judgment, no rush — we'll explain it as many times as needed.",'A una llamada de distancia. Sin juicios, sin prisa — lo explicamos las veces que haga falta.'],
 
+  // ── HOW IT WORKS ──
+  ['proc-label','HOW IT WORKS','CÓMO FUNCIONA'],
+  ['proc-h2','Three steps to technology<br>that works for you.','Tres pasos hacia tecnología<br>que trabaja para ti.','html'],
+  ['step1-num','STEP 01','PASO 01'],
+  ['step1-h',"Tell us what's going on",'Cuéntanos qué está pasando'],
+  ['step1-p',"We listen, ask the right questions, and figure out the best solution for your situation — no jargon, no sales pitch, no wasted time.",'Escuchamos, hacemos las preguntas correctas y encontramos la mejor solución — sin tecnicismos, sin discurso de ventas, sin pérdida de tiempo.'],
+  ['step2-num','STEP 02','PASO 02'],
+  ['step2-h','We build your solution','Construimos tu solución'],
+  ['step2-p',"Whether it's a custom app, an automation, or a quick fix — we work fast and keep you informed at every step. No surprises.",'Ya sea una app personalizada, una automatización o una solución rápida — trabajamos rápido y te mantenemos informado en cada paso.'],
+  ['step3-num','STEP 03','PASO 03'],
+  ['step3-h','You focus on your business','Tú enfócate en tu negocio'],
+  ['step3-p',"We handle the tech so you don't have to. Ongoing support means we're always one call away when something comes up.",'Nosotros manejamos la tecnología para que tú no tengas que hacerlo. El soporte continuo significa que siempre estamos a una llamada de distancia.'],
+
+  // ── PRICING ──
+  ['price-label','PRICING','PRECIOS'],
+  ['price-h2','Simple, honest pricing.<br>No surprises.','Precios simples y honestos.<br>Sin sorpresas.','html'],
+  ['p1-label','Quick Fix','Solución Rápida'],
+  ['p1-title','One-Time Help','Ayuda Puntual'],
+  ['p1-per',' / session',' / sesión'],
+  ['p1-sub','Perfect for seniors, families, or anyone who needs fast, friendly tech help.','Perfecto para personas mayores, familias o cualquiera que necesite ayuda tech rápida y amigable.'],
+  ['p1-f1','Device setup & troubleshooting','Configuración y resolución de problemas'],
+  ['p1-f2','Scam & security cleanup','Limpieza de estafas y seguridad'],
+  ['p1-f3','Bilingual support (EN/ES)','Soporte bilingüe (EN/ES)'],
+  ['p1-f4','Remote or on-site','Remoto o presencial'],
+  ['p1-cta','Get started →','Comenzar →'],
+  ['p2-badge','Most Popular','Más Popular'],
+  ['p2-label','Project Build','Proyecto a Medida'],
+  ['p2-title','Custom Solution','Solución Personalizada'],
+  ['p2-price-display','From $1,500','Desde $1,500'],
+  ['p2-sub','Apps, automations, and integrations built around your workflow.','Apps, automatizaciones e integraciones construidas alrededor de tu flujo de trabajo.'],
+  ['p2-f1','Custom web or mobile app','App web o móvil personalizada'],
+  ['p2-f2','AI & workflow automation','IA y automatización de flujos'],
+  ['p2-f3','Third-party integrations','Integraciones con terceros'],
+  ['p2-f4','Free consultation included','Consulta gratuita incluida'],
+  ['p2-f5','30-day post-launch support','Soporte 30 días post-lanzamiento'],
+  ['p2-cta','Get a free quote →','Obtener cotización gratis →'],
+  ['p3-label','Monthly Partner','Socio Mensual'],
+  ['p3-title','Ongoing Support','Soporte Continuo'],
+  ['p3-price-display','Custom','Personalizado'],
+  ['p3-custom','Custom','Personalizado'],
+  ['p3-sub','Your dedicated tech team without the full-time hire. Flexible monthly plans.','Tu equipo tech dedicado sin contratar a tiempo completo. Planes mensuales flexibles.'],
+  ['p3-f1','IT consulting & strategy','Consultoría IT y estrategia'],
+  ['p3-f2','Priority support & response','Soporte y respuesta prioritaria'],
+  ['p3-f3','Security monitoring','Monitoreo de seguridad'],
+  ['p3-f4','Monthly check-ins','Revisiones mensuales'],
+  ['p3-f5','No long-term contract','Sin contrato a largo plazo'],
+  ['p3-cta',"Let's talk →",'Hablemos →'],
+
+  // ── FAQ ──
+  ['faq-label','FAQ','PREGUNTAS FRECUENTES'],
+  ['faq-h2','Questions people<br>actually ask.','Preguntas que la gente<br>realmente hace.','html'],
+  ['faq1-q','Do you work with clients outside of Florida?','¿Trabajan con clientes fuera de Florida?'],
+  ['faq1-a','Yes — most of our work is done remotely, so we serve clients anywhere in the US and internationally. We also do on-site visits in the Florida area when needed.','Sí — la mayor parte de nuestro trabajo es remoto, por lo que atendemos clientes en cualquier parte de EE.UU. e internacionalmente. También hacemos visitas presenciales en el área de Florida cuando es necesario.'],
+  ['faq2-q','How much does a custom app cost?','¿Cuánto cuesta una app personalizada?'],
+  ['faq2-a','Project prices start at $1,500 and depend on complexity, features, and timeline. We always give you a clear quote before we start — no surprise invoices. Book a free consultation and we\'ll give you an honest number within 24 hours.','Los proyectos comienzan desde $1,500 y dependen de la complejidad, funcionalidades y tiempo. Siempre te damos un presupuesto claro antes de empezar — sin facturas sorpresa. Agenda una consulta gratuita y te damos un número honesto en menos de 24 horas.'],
+  ['faq3-q','How long does a project take?','¿Cuánto tiempo toma un proyecto?'],
+  ['faq3-a','Simple automations and fixes can be done in days. A full custom app typically takes 4–8 weeks depending on scope. We\'ll give you a realistic timeline upfront and stick to it.','Las automatizaciones y correcciones simples se pueden hacer en días. Una app personalizada completa generalmente toma 4–8 semanas según el alcance. Te damos un cronograma realista desde el principio y lo cumplimos.'],
+  ['faq4-q','Do I need to sign a long-term contract?','¿Necesito firmar un contrato a largo plazo?'],
+  ['faq4-a','No. One-time projects are exactly that — one-time. Our monthly support plans are flexible and can be cancelled anytime. We earn your business every month, not by locking you in.','No. Los proyectos únicos son exactamente eso — únicos. Nuestros planes de soporte mensual son flexibles y se pueden cancelar en cualquier momento. Nos ganamos tu negocio cada mes, no atándote a un contrato.'],
+  ['faq5-q','Do you really speak Spanish?','¿Realmente hablan español?'],
+  ['faq5-a','Yes — genuinely fluent, not Google Translate. We can handle full projects, support calls, and documentation in Spanish. Many of our clients prefer it.','Sí — fluidos de verdad, no Google Translate. Podemos manejar proyectos completos, llamadas de soporte y documentación en español. Muchos de nuestros clientes lo prefieren.'],
+  ['faq6-q',"What if my parents or grandparents aren't tech-savvy?",'¿Qué pasa si mis padres o abuelos no saben de tecnología?'],
+  ['faq6-a',"That's exactly why we built the Senior & Family Support service. We're endlessly patient, we explain everything in plain language, and we follow up to make sure things are still working. We've helped seniors in their 80s video call their grandkids for the first time — it's one of our favorite things to do.",'Por eso mismo creamos el servicio de Soporte para Mayores y Familias. Somos infinitamente pacientes, explicamos todo en lenguaje simple y hacemos seguimiento para asegurarnos de que todo siga funcionando. Hemos ayudado a personas mayores de 80 años a hacer videollamadas con sus nietos por primera vez — es una de nuestras actividades favoritas.'],
+
   // ── CONTACT PAGE ──
   ['contact-h1',"Let's build something<br><span class=\"ta\">together.</span>",'Construyamos algo<br><span class="ta">juntos.</span>','html'],
   ['contact-sub',"Have a project in mind, need tech help, or just want to see how we can help? Drop us a message and we'll get back to you within 24 hours.",'¿Tienes un proyecto en mente, necesitas ayuda tech, o quieres ver cómo podemos ayudarte? Escríbenos y te respondemos en menos de 24 horas.'],
@@ -242,27 +306,119 @@ window.addEventListener('scroll', function() {
   if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
 });
 
-function sendForm() {
-  var name = document.getElementById('form-name');
-  var email = document.getElementById('form-email');
-  var msg = document.getElementById('form-msg');
-  if (!name || !email || !msg) return;
-  var n = name.value.trim(), e = email.value.trim(), m = msg.value.trim();
-  if (!n || !e || !m) return;
+/* ── Supabase config ── */
+var SUPABASE_URL = 'https://mcddvwsysprgyscafyzy.supabase.co/functions/v1/notify-contact';
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1jZGR2d3N5c3ByZ3lzY2FmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NjMyOTMsImV4cCI6MjA5MjEzOTI5M30.zcAMRHbcFSdcLx7iFnh0GxPP_-YjGqFffjRjc35pW1g';
 
+function toggleFaq(questionEl) {
+  var item = questionEl.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.t-faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+  });
+  if (!isOpen) item.classList.add('open');
+}
+
+function initReveal() {
+  var els = document.querySelectorAll(
+    '.t-problems, .t-services-preview, .t-why, .t-testimonials, ' +
+    '.t-svc-detail, .t-story, .t-pillars, .t-contact-body, ' +
+    '.t-about-hero .t-badge, .t-svc-hero .t-badge, .t-contact-hero .t-badge, ' +
+    '.t-cta-banner .t-cta-inner'
+  );
+  var cards = document.querySelectorAll(
+    '.t-problem-card, .t-svc-card, .t-test-card, .t-why-item, ' +
+    '.t-pillar, .t-stat, .t-svc-feature, .t-contact-block'
+  );
+
+  els.forEach(function(el) { el.classList.add('reveal'); });
+  cards.forEach(function(el, i) {
+    el.classList.add('reveal');
+    var delay = (i % 4);
+    if (delay > 0) el.classList.add('reveal-delay-' + delay);
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initReveal);
+} else {
+  initReveal();
+}
+
+function sendForm() {
+  var nameEl = document.getElementById('form-name');
+  var emailEl = document.getElementById('form-email');
+  var msgEl = document.getElementById('form-msg');
+  var serviceEl = document.getElementById('form-service');
+  var btnEl = document.getElementById('form-btn');
+  var successEl = document.getElementById('form-success');
+  if (!nameEl || !emailEl || !msgEl) return;
+
+  var n = nameEl.value.trim(), e = emailEl.value.trim(), m = msgEl.value.trim();
+  if (!n || !e || !m) {
+    [nameEl, emailEl, msgEl].forEach(function(el) {
+      if (!el.value.trim()) el.style.borderColor = '#e53935';
+      else el.style.borderColor = '';
+    });
+    return;
+  }
+  [nameEl, emailEl, msgEl].forEach(function(el) { el.style.borderColor = ''; });
+
+  var svc = serviceEl ? serviceEl.value : '';
+  if (btnEl) btnEl.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+
+  var useSupabase = SUPABASE_ANON_KEY && SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY';
+
+  if (useSupabase) {
+    fetch(SUPABASE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'apikey': SUPABASE_ANON_KEY
+      },
+      body: JSON.stringify({ name: n, email: e, service: svc, message: m, lang: currentLang })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function() {
+      if (successEl) successEl.style.display = 'block';
+      nameEl.value = ''; emailEl.value = ''; msgEl.value = '';
+      if (serviceEl) serviceEl.selectedIndex = 0;
+      if (btnEl) btnEl.textContent = currentLang === 'es' ? 'Enviar mensaje →' : 'Send message →';
+    })
+    .catch(function() {
+      if (btnEl) btnEl.textContent = currentLang === 'es' ? 'Enviar mensaje →' : 'Send message →';
+      _sendViaMail(n, e, svc, m);
+    });
+  } else {
+    _sendViaMail(n, e, svc, m);
+    if (successEl) successEl.style.display = 'block';
+    nameEl.value = ''; emailEl.value = ''; msgEl.value = '';
+    if (serviceEl) serviceEl.selectedIndex = 0;
+    if (btnEl) btnEl.textContent = currentLang === 'es' ? 'Enviar mensaje →' : 'Send message →';
+  }
+}
+
+function _sendViaMail(n, e, svc, m) {
   var isES = currentLang === 'es';
-  var service = document.getElementById('form-service');
-  var svc = service ? service.value : '';
   var subject = encodeURIComponent('Tolotech - ' + (isES ? 'Nuevo mensaje de contacto' : 'New Contact Message'));
   var body = encodeURIComponent(
     (isES ? 'Nombre' : 'Name') + ': ' + n + '\n' +
     (isES ? 'Correo' : 'Email') + ': ' + e + '\n' +
     (isES ? 'Servicio' : 'Service') + ': ' + (svc || 'N/A') + '\n\n' + m
   );
-  window.location.href = 'mailto:hello@tolotech.net?subject=' + subject + '&body=' + body;
-
-  var success = document.getElementById('form-success');
-  if (success) success.style.display = 'block';
-  name.value = ''; email.value = ''; msg.value = '';
-  if (service) service.selectedIndex = 0;
+  window.open('mailto:hello@tolotech.net?subject=' + subject + '&body=' + body);
 }

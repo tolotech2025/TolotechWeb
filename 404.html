@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found · Tolotech</title>
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.t-404 {
+  min-height: calc(100vh - 73px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.t-404-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(6rem, 18vw, 12rem);
+  font-weight: 700;
+  color: var(--navy);
+  opacity: 0.06;
+  line-height: 1;
+  letter-spacing: -4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  pointer-events: none;
+  user-select: none;
+}
+.t-404-content { position: relative; z-index: 1; }
+.t-404-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.t-404-content h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.8px;
+  margin-bottom: 1rem;
+}
+.t-404-content p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 420px;
+  margin: 0 auto 2.25rem;
+  font-weight: 400;
+}
+.t-404-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<nav class="t-nav" id="navbar">
+<a href="index.html" class="t-logo-wrap"><img src="assets/icon.png" alt="Tolotech" class="t-logo-icon"><span class="t-logo-text">TOLO<span>TECH</span></span></a>
+<div class="t-nav-center">
+<a href="index.html" class="t-nav-link">Home</a>
+<a href="services.html" class="t-nav-link">Services</a>
+<a href="about.html" class="t-nav-link">About</a>
+<a href="contact.html" class="t-nav-link">Contact</a>
+</div>
+<div class="t-nav-right">
+<a href="contact.html" class="t-nav-cta">Get in touch</a>
+<button class="t-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="t-mobile-menu" id="mobile-menu">
+<a href="index.html" class="t-mobile-link">Home</a>
+<a href="services.html" class="t-mobile-link">Services</a>
+<a href="about.html" class="t-mobile-link">About</a>
+<a href="contact.html" class="t-mobile-link">Contact</a>
+</div>
+</nav>
+
+<div class="t-404">
+<div class="t-404-num">404</div>
+<div class="t-grid-bg" style="position:absolute;inset:0;z-index:0"></div>
+<div class="t-404-content">
+<span class="t-404-icon">🔌</span>
+<h1>This page got unplugged.</h1>
+<p>Looks like this link is broken or the page no longer exists. Let's get you back on track.</p>
+<div class="t-404-actions">
+<a href="index.html" class="t-btn-primary">Go home →</a>
+<a href="contact.html" class="t-btn-ghost">Contact us</a>
+</div>
+</div>
+</div>
+
+<a href="https://wa.me/18503211134" target="_blank" class="t-wa-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="assets/lang.js"></script>
+</body>
+</html>
