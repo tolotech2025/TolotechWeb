@@ -240,7 +240,16 @@ var MAP = [
   ['form-email','Your email','Tu correo','placeholder'],
   ['form-msg','Tell us about your project or problem...','Cuéntanos sobre tu proyecto o problema...','placeholder'],
   ['form-btn','Send message →','Enviar mensaje →'],
-  ['form-success',"Message sent — we'll be in touch soon.",'Mensaje enviado — estaremos en contacto pronto.']
+  ['form-success',"Message sent — we'll be in touch soon.",'Mensaje enviado — estaremos en contacto pronto.'],
+
+  // ── ANNOUNCEMENT BAR ──
+  ['ann-text','Now accepting new clients —','Aceptando nuevos clientes —'],
+  ['ann-link','Book a free call →','Agenda una llamada gratis →'],
+
+  // ── COOKIE CONSENT ──
+  ['cookie-text','We use cookies to improve your experience on this site.','Usamos cookies para mejorar tu experiencia en este sitio.'],
+  ['cookie-accept','Accept','Aceptar'],
+  ['cookie-decline','Decline','Rechazar']
 ];
 
 // Select options for contact form
@@ -422,6 +431,51 @@ if (document.readyState === 'loading') {
 } else {
   initReveal();
 }
+
+/* ── Announcement bar ── */
+(function() {
+  var bar = document.getElementById('t-announce');
+  if (!bar) return;
+  if (sessionStorage.getItem('ann-dismissed') === '1') bar.classList.add('hidden');
+})();
+function dismissAnnounce() {
+  var bar = document.getElementById('t-announce');
+  if (bar) bar.classList.add('hidden');
+  sessionStorage.setItem('ann-dismissed', '1');
+}
+
+/* ── Cookie consent ── */
+(function() {
+  var banner = document.getElementById('t-cookie');
+  if (!banner) return;
+  if (localStorage.getItem('cookie-choice')) { banner.classList.add('hidden'); return; }
+  setTimeout(function() { banner.classList.add('visible'); }, 1800);
+})();
+function acceptCookie() {
+  var b = document.getElementById('t-cookie');
+  if (b) { b.classList.remove('visible'); setTimeout(function() { b.classList.add('hidden'); }, 400); }
+  localStorage.setItem('cookie-choice', 'accepted');
+}
+function declineCookie() {
+  var b = document.getElementById('t-cookie');
+  if (b) { b.classList.remove('visible'); setTimeout(function() { b.classList.add('hidden'); }, 400); }
+  localStorage.setItem('cookie-choice', 'declined');
+}
+
+/* ── Message char counter ── */
+(function() {
+  var ta = document.getElementById('form-msg');
+  var counter = document.getElementById('msg-counter');
+  if (!ta || !counter) return;
+  var max = 1000;
+  function update() {
+    var len = ta.value.length;
+    counter.textContent = len + ' / ' + max;
+    counter.classList.toggle('warn', len > Math.floor(max * 0.85));
+  }
+  ta.addEventListener('input', update);
+  update();
+})();
 
 function sendForm() {
   var nameEl = document.getElementById('form-name');

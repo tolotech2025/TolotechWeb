@@ -1647,3 +1647,137 @@ img { display: block; }
   .t-faq-question { padding: 1.25rem 1.5rem; }
   .t-faq-answer { padding: 0 1.5rem 1.25rem; }
 }
+
+/* ══════════════════════════════════════
+   WAVE 4 — Announcement · Cookie · Fade
+   ══════════════════════════════════════ */
+
+/* ── Announcement bar ── */
+.t-announce {
+  background: linear-gradient(90deg, var(--navy-deep) 0%, var(--navy-light) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 10px 3.5rem;
+  font-size: 13.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+.t-announce a {
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+.t-announce a:hover { opacity: 0.8; }
+.t-announce-x {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  padding: 2px 6px;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+.t-announce-x:hover { color: #fff; }
+.t-announce.hidden { display: none; }
+
+/* ── Cookie consent ── */
+.t-cookie {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 1.25rem 1.5rem;
+  max-width: 310px;
+  z-index: 1600;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s, transform 0.4s;
+  pointer-events: none;
+}
+.t-cookie.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.t-cookie.hidden { display: none; }
+.t-cookie-inner { display: flex; align-items: flex-start; gap: 12px; }
+.t-cookie-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+.t-cookie-inner p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+.t-cookie-actions { display: flex; gap: 8px; }
+.t-cookie-accept {
+  flex: 1;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+.t-cookie-accept:hover { background: var(--blue-mid); }
+.t-cookie-decline {
+  flex: 1;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.t-cookie-decline:hover { border-color: var(--text-secondary); color: var(--text); }
+
+/* ── Page fade-in ── */
+@keyframes t-pagefade {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+body { animation: t-pagefade 0.3s ease both; }
+
+/* ── Form character counter ── */
+.t-form-meta { display: flex; justify-content: flex-end; margin-top: -10px; }
+.t-char-counter { font-size: 12px; color: var(--text-muted); transition: color 0.2s; }
+.t-char-counter.warn { color: var(--coral); font-weight: 600; }
+
+/* ── Input shake on error ── */
+@keyframes t-shake {
+  0%,100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+.input-shake { animation: t-shake 0.4s ease; }
+
+/* ── Wave 4 responsive ── */
+@media (max-width: 768px) {
+  .t-announce { padding: 10px 3rem 10px 1rem; font-size: 13px; }
+  .t-cookie { bottom: 90px; right: 1rem; left: 1rem; max-width: none; }
+}
