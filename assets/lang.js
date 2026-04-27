@@ -262,6 +262,10 @@ function setLang(lang) {
 
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  var mEn = document.getElementById('m-btn-en');
+  var mEs = document.getElementById('m-btn-es');
+  if (mEn) mEn.classList.toggle('active', lang === 'en');
+  if (mEs) mEs.classList.toggle('active', lang === 'es');
   document.documentElement.lang = lang;
 
   for (var i = 0; i < MAP.length; i++) {
@@ -309,6 +313,67 @@ window.addEventListener('scroll', function() {
 /* ── Supabase config ── */
 var SUPABASE_URL = 'https://mcddvwsysprgyscafyzy.supabase.co/functions/v1/notify-contact';
 var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1jZGR2d3N5c3ByZ3lzY2FmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NjMyOTMsImV4cCI6MjA5MjEzOTI5M30.zcAMRHbcFSdcLx7iFnh0GxPP_-YjGqFffjRjc35pW1g';
+
+/* ── Scroll progress bar ── */
+(function() {
+  var bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  window.addEventListener('scroll', function() {
+    var total = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+  }, { passive: true });
+})();
+
+/* ── Back to top ── */
+(function() {
+  var btn = document.getElementById('back-top');
+  if (!btn) return;
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+/* ── Sticky mobile CTA ── */
+(function() {
+  var bar = document.getElementById('mobile-cta');
+  if (!bar) return;
+  var heroEl = document.querySelector('.t-hero, .t-svc-hero, .t-about-hero, .t-contact-hero');
+  var threshold = heroEl ? heroEl.offsetTop + heroEl.offsetHeight : 400;
+  window.addEventListener('scroll', function() {
+    bar.classList.toggle('visible', window.scrollY > threshold);
+  }, { passive: true });
+})();
+
+/* ── Animated counters (About page) ── */
+(function() {
+  var stats = document.querySelectorAll('.t-stat-num');
+  if (!stats.length) return;
+  function animateCount(el) {
+    var raw = el.textContent.trim();
+    var num = parseFloat(raw.replace(/[^0-9.]/g, ''));
+    if (isNaN(num) || raw === '∞' || raw === 'US') return;
+    var suffix = raw.replace(/[0-9.]/g, '');
+    var start = null, duration = 1400;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(num * ease) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { animateCount(e.target); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  stats.forEach(function(el) { obs.observe(el); });
+})();
 
 function toggleFaq(questionEl) {
   var item = questionEl.parentElement;
