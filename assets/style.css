@@ -1649,6 +1649,272 @@ img { display: block; }
 }
 
 /* ══════════════════════════════════════
+   OUR WORK section
+   ══════════════════════════════════════ */
+
+.t-work {
+  padding: 5rem 3rem;
+  border-bottom: 1px solid rgba(27,43,75,0.07);
+  background: var(--bg-alt);
+}
+.t-work .t-section-h2 { margin-bottom: 0.5rem; }
+.t-work-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+/* ── Featured project card ── */
+.t-work-card {
+  background: #fff;
+  border: 1px solid rgba(27,43,75,0.09);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+.t-work-card:hover { box-shadow: var(--shadow-lg); }
+
+.t-work-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid rgba(27,43,75,0.07);
+  background: var(--bg-alt);
+}
+.t-work-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 12px;
+  letter-spacing: 0.2px;
+}
+.t-work-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00a878;
+  background: #e0faf3;
+  border: 1px solid rgba(0,200,150,0.3);
+  border-radius: 99px;
+  padding: 4px 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+.t-work-live-dot {
+  width: 7px; height: 7px;
+  background: var(--teal);
+  border-radius: 50%;
+  animation: t-pulse 1.8s infinite;
+}
+@keyframes t-pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.3); }
+}
+
+.t-work-card-body {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0;
+}
+.t-work-card-left {
+  padding: 2.5rem 2.5rem;
+  border-right: 1px solid rgba(27,43,75,0.07);
+}
+.t-work-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1.25rem;
+}
+.t-work-logo-icon { font-size: 2.5rem; line-height: 1; }
+.t-work-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.8px;
+  margin: 0 0 2px;
+}
+.t-work-domain {
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+.t-work-domain:hover { opacity: 0.75; }
+.t-work-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+.t-work-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+.t-work-features span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  border-radius: 8px;
+  padding: 6px 14px;
+}
+.t-work-cta { font-size: 15px; padding: 12px 28px; }
+
+/* ── Browser mockup (right panel) ── */
+.t-work-card-right {
+  padding: 2rem;
+  background: linear-gradient(145deg, #f0f4ff 0%, #e8f0fe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.t-work-browser {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(27,43,75,0.12);
+  overflow: hidden;
+  width: 100%;
+  max-width: 340px;
+}
+.t-work-browser-bar {
+  background: #f0f2f5;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #e4e6ea;
+}
+.t-work-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+}
+.t-work-dot:nth-child(1) { background: #ff5f57; }
+.t-work-dot:nth-child(2) { background: #ffbd2e; }
+.t-work-dot:nth-child(3) { background: #28c840; }
+.t-work-browser-url {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  background: #fff;
+  border: 1px solid #e4e6ea;
+  border-radius: 6px;
+  padding: 3px 10px;
+  margin: 0 6px;
+}
+.t-work-browser-body { padding: 20px; }
+.t-work-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.t-work-preview-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+}
+.t-work-preview-logo span { color: var(--teal); }
+.t-work-preview-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-light);
+  border-radius: 99px;
+  padding: 3px 9px;
+  letter-spacing: 0.3px;
+}
+.t-work-preview-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 13px;
+}
+.t-work-preview-stat span { color: #999; }
+.t-work-preview-stat strong { color: var(--navy); font-weight: 600; }
+.t-work-preview-plans {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+.t-work-plan {
+  flex: 1;
+  text-align: center;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.t-work-plan small { font-size: 10px; font-weight: 400; color: #aaa; }
+.t-work-plan-mid {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.t-work-plan-mid small { color: rgba(255,255,255,0.5); }
+
+/* ── Coming soon placeholder ── */
+.t-work-coming {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+.t-work-coming-icon {
+  width: 44px; height: 44px;
+  border: 2px dashed var(--border);
+  border-radius: 50%;
+  line-height: 40px;
+  font-size: 22px;
+  color: var(--border);
+  margin: 0 auto 0.75rem;
+}
+.t-work-coming p { font-size: 14px; margin: 0; font-weight: 500; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .t-work-card-body { grid-template-columns: 1fr; }
+  .t-work-card-left { border-right: none; border-bottom: 1px solid rgba(27,43,75,0.07); }
+  .t-work-card-right { padding: 2rem; }
+  .t-work-browser { max-width: 400px; margin: 0 auto; }
+}
+@media (max-width: 768px) {
+  .t-work { padding: 3.5rem 1.5rem; }
+  .t-work-card-left { padding: 1.75rem 1.5rem; }
+  .t-work-card-right { display: none; }
+}
+
+/* ══════════════════════════════════════
    WAVE 4 — Announcement · Cookie · Fade
    ══════════════════════════════════════ */
 
